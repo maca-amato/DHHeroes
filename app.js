@@ -40,3 +40,7 @@ app.get ("/lovelace", (req, res) => {
 app.get ("/turing", (req, res) => {
     res.sendFile (path.join (__dirname, "/views/turing.html"));
 });
+
+app.get ("*", (req, res) => {
+    res.status (404).send ("Error: página no encontrada");
+});
